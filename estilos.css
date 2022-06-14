@@ -43,4 +43,38 @@ body{
         gap: 11rem;
         background: #06090d;
 }
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 11rem;
+    background: #0b0e0b;
+}
+.ripple{
+    width: 1rem;
+    background: #ff0;
+    border-radius: 100px;
+}
+.ripple,.ripple::before,.ripple::after{
+    content: "";
+    display: grid;
+    grid-area: 1/1;
+    aspect-ratio: 1;
+    border-radius: 100px;
+    box-shadow: 0 0 0 0 rgba(255, 255, 0, 0.2);
+    animation: r 3s linear infinite var(--s,0s);
+}
+.ripple::before{
+    --s: 1s;
+}
+.ripple::after{
+    --s: 1s;
+}
+@keyframes r {
+    to{
+        box-shadow: 0 0 0 4rem #0000;
+    }
+}
 }
